@@ -1,0 +1,26 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: notification-service
+  rabbitmq:
+    host: ${RABBITMQ_HOST:rabbitmq}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:ecommerce}
+    password: ${RABBITMQ_PASSWORD:ecommerce123}
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+rabbitmq:
+  queue:
+    order-placed: order.placed.queue

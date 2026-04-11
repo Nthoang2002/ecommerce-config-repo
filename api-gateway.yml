@@ -1,0 +1,57 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      # Routes: Path=/api/{service}/** → lb://service, StripPrefix=2 removes /api/{service}
+      routes:
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - StripPrefix=2
+
+        - id: product-service
+          uri: lb://product-service
+          predicates:
+            - Path=/api/products/**
+          filters:
+            - StripPrefix=2
+
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/api/orders/**
+          filters:
+            - StripPrefix=2
+
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/api/notifications/**
+          filters:
+            - StripPrefix=2
+
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://localhost:3000"
+              - "http://localhost:5173"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - PATCH
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            allowCredentials: true

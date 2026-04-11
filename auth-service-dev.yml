@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth_db
+    username: ecommerce
+    password: ecommerce123
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+jwt:
+  secret: dev-secret-key-change-in-production-min-32-chars

@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins:
+              - "https://sporttech.vn"
+              - "https://www.sporttech.vn"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - PATCH
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            allowCredentials: true
+
+logging:
+  level:
+    org.springframework.cloud.gateway: WARN
+    reactor.netty: WARN

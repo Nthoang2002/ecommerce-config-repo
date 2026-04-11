@@ -1,0 +1,28 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: order-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  rabbitmq:
+    host: ${RABBITMQ_HOST:rabbitmq}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:ecommerce}
+    password: ${RABBITMQ_PASSWORD:ecommerce123}
+    virtual-host: /
+
+rabbitmq:
+  exchange:
+    order: order.exchange
+  queue:
+    order-placed: order.placed.queue
+  routing-key:
+    order-placed: order.placed

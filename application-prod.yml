@@ -1,0 +1,17 @@
+logging:
+  level:
+    root: WARN
+    com.ecommerce: INFO
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/
+
+management:
+  endpoint:
+    health:
+      show-details: never
+  tracing:
+    sampling:
+      probability: 0.1
