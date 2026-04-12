@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/order_db
+    url: jdbc:postgresql://postgres:5432/order_db
     username: ecommerce
     password: ecommerce123
   jpa:
@@ -8,4 +8,4 @@ spring:
       ddl-auto: create-drop
     show-sql: true
   rabbitmq:
-    host: localhost
+    host: rabbitmq
