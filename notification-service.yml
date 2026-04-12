@@ -24,3 +24,8 @@ spring:
 rabbitmq:
   queue:
     order-placed: order.placed.queue
+
+management:
+  health:
+    mail:
+      enabled: false
