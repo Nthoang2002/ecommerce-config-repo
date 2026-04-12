@@ -9,4 +9,4 @@ spring:
     show-sql: true
 
 jwt:
-  secret: dev-secret-key-change-in-production-min-32-chars
+  secret: ZGV2U2VjcmV0S2V5Rm9yRWNvbW1lcmNlTWljcm9zZXJ2aWNlMjAyNERldmVsb3BtZW50T25seQ==
