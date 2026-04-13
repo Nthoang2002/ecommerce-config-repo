@@ -4,8 +4,6 @@ spring:
     username: ecommerce
     password: ecommerce123
   jpa:
-    hibernate:
-      ddl-auto: create-drop
     show-sql: true
 
 jwt:
