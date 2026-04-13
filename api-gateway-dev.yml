@@ -1,3 +1,6 @@
+jwt:
+  secret: ZGV2U2VjcmV0S2V5Rm9yRWNvbW1lcmNlTWljcm9zZXJ2aWNlMjAyNERldmVsb3BtZW50T25seQ==
+
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
